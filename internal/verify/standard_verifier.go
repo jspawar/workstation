@@ -14,6 +14,7 @@ func NewStdStreamsVerifier() Verifier {
 	return StdStreamsVerifier{}
 }
 
+// TODO: rename to indicate this is a generic script runner (not just for verifying)
 func (v StdStreamsVerifier) Verify(rawReader io.Reader) (*os.ProcessState, error) {
 	rawScript, err := ioutil.ReadAll(rawReader)
 	if err != nil {
