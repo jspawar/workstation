@@ -1,0 +1,35 @@
+# Core utilities
+brew 'bash'
+brew 'bat'
+brew 'coreutils'
+brew 'curl'
+brew 'docker'
+brew 'fasd'
+brew 'fd'
+brew 'git'
+brew 'htop'
+brew 'jq'
+brew 'pstree'
+brew 'ripgrep'
+brew 'terraform'
+brew 'tldr'
+brew 'tmux'
+brew 'tree'
+brew 'watch'
+
+# Languages
+brew 'chruby'
+brew 'go'
+brew 'ruby-install'
+brew 'shellcheck'
+
+# Editors
+brew 'railwaycat/emacsmacport/emacs-mac', args: ["with-modules"]
+
+# Fonts
+brew 'freetype'
+
+# Cask stuff
+cask 'flycut'
+cask 'iterm2'
+cask 'rectangle'

@@ -71,4 +71,6 @@ function install_module() {
         log_error "Module '${module_name}' was installed, but installation is invalid"
         return 1
     fi
+
+    log_info "Successfully installed module '${module_name}'"
 }
