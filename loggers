@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+
+# TODO: add timestamps
+function log_info() {
+    local green=$'\e[0;32m'
+    local reset=$'\e[m'
+    echo "${green}[info]${reset} $1"
+}
+
+function log_error() {
+    local red=$'\e[0;31m'
+    local reset=$'\e[m'
+    echo "${red}[error]${reset} $1" 1>&2
+}
+
+function log_debug() {
+    local blue=$'\e[0;34m'
+    local reset=$'\e[m'
+    echo "${blue}[debug]${reset} $1"
+}

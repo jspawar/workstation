@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# TODO: options and usage text
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# TODO: source or make executable and call?
+source "${SCRIPT_DIR}"/loggers
+source "${SCRIPT_DIR}"/install-module
+
+for module in "${SCRIPT_DIR}"/modules/*; do
+    module_name="$(basename "${module}")"
+    # echo "[info] Installing module: ${module_name}"
+    log_info "Installing module: ${module_name}"
+
+    # TODO: fail early if module fails to install or continue?
+    install_module "${module}"
+done
