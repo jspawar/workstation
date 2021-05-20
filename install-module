@@ -61,8 +61,10 @@ function install_module() {
 
     # execute installation script
     log_info "Begin output from installation of module '${module_name}'"
+    set +e
     bash -c "${module_path}/install.sh"
     result=$?
+    set -e
     log_info "End output from installation of module '${module_name}'"
     if [ $result -gt 0 ]; then
         log_error "Failed to install module '${module_name}'"
