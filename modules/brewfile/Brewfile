@@ -1,23 +1,29 @@
+# Taps
+tap 'romkatv/gitstatus'
+
 # Core utilities
 brew 'bash'
+brew 'bash-completion'
 brew 'bat'
 brew 'coreutils'
 brew 'curl'
 # TODO: comment this back in when you run this on a fresh machine which didn't already have them
 # brew 'docker'
-brew 'fasd'
 brew 'fd'
 brew 'git'
+brew 'gnu-sed'
 brew 'htop'
 brew 'jq'
 brew 'pstree'
 brew 'ripgrep'
+brew 'romkatv/gitstatus/gitstatus'
 brew 'stow'
 brew 'terraform'
 brew 'tldr'
 brew 'tmux'
 brew 'tree'
 brew 'watch'
+brew 'z'
 
 # Languages
 brew 'chruby'
