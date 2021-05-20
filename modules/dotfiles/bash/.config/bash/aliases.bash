@@ -1,3 +1,6 @@
+# this
+alias pave='${HOME}/workspace/workstation/pave'
+
 # emacs
 alias vim='emacs -nw'
 

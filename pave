@@ -18,3 +18,5 @@ for module in "${SCRIPT_DIR}"/modules/*; do
     # TODO: fail early if module fails to install or continue?
     install_module "${module}"
 done
+
+log_info "Successfully paved machine!"
