@@ -55,7 +55,7 @@ function install_module() {
     local result=$?
     set -e
     if [ $result -eq 0 ]; then
-        log_debug "Module '${module_name}' is already installed"
+        log_info "Module '${module_name}' is already installed"
         return 0
     fi
 
