@@ -6,3 +6,4 @@ alias ll='ls -la'
 
 # git
 alias gs='git status'
+alias gd='git diff'
