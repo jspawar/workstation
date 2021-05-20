@@ -1,0 +1,30 @@
+[user]
+	email = mail@jaskanwal.dev
+	name = Jaskanwal Pawar
+
+[alias]
+	br = branch
+	ci = commit --verbose
+	co = checkout
+	cp = cherry-pick
+	di = diff
+	ds = "diff --staged"
+	fixup = "commit --fixup"
+	flog = "log --pretty=fuller --decorate"
+	lg = "log --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an & %cn%Creset'"
+	lgf = "log --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)%an & %cn%Creset'"
+	llog = "log --date=local"
+	lol = "log --graph --decorate --oneline"
+	lola = "log --graph --decorate --oneline --all"
+	s = status --short --branch
+	st = status
+
+[core]
+	pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+
+[merge]
+	# Display common-ancestor blocks in conflict hunks
+	conflictStyle = diff3
+
+[interactive]
+	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
