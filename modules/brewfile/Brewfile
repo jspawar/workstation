@@ -30,6 +30,7 @@ brew 'railwaycat/emacsmacport/emacs-mac', args: ["with-modules"]
 brew 'freetype'
 
 # Cask stuff
-cask 'flycut'
-cask 'iterm2'
-cask 'rectangle'
+# TODO: comment these back in when you run this on a fresh machine which didn't already have them
+# cask 'flycut'
+# cask 'iterm2'
+# cask 'rectangle'
