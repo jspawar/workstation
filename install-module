@@ -4,6 +4,17 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "${SCRIPT_DIR}"/loggers
 
+# NOTE: not to be exported (for now)
+function _verify_module() {
+    local module_path=${1}
+
+    # TODO: where to send output of verification script?
+    bash -c "${module_path}/verify.sh" >/dev/null 2>&1
+    local result=$?
+
+    return $result
+}
+
 function install_module() {
     local module_path=${1}
     local module_name="$(basename "${module_path}")"
@@ -39,10 +50,8 @@ function install_module() {
     fi
 
     # run verification script to see if module has already been installed
-    # TODO: export this to its own function file?
-    # TODO: where to send output of verification script?
     set +e
-    bash -c "${module_path}/verify.sh" >/dev/null 2>&1
+    _verify_module "${module_path}"
     local result=$?
     set -e
     if [ $result -eq 0 ]; then
@@ -53,7 +62,7 @@ function install_module() {
     # execute installation script
     log_info "Begin output from installation of module '${module_name}'"
     bash -c "${module_path}/install.sh"
-    local result=$?
+    result=$?
     log_info "End output from installation of module '${module_name}'"
     if [ $result -gt 0 ]; then
         log_error "Failed to install module '${module_name}'"
@@ -61,11 +70,9 @@ function install_module() {
     fi
 
     # re-run verification to confirm installation has _actually_ succeeded
-    # TODO: export this to its own function file?
-    # TODO: where to send output of verification script?
     set +e
-    bash -c "${module_path}/verify.sh" >/dev/null 2>&1
-    local result=$?
+    _verify_module "${module_path}"
+    result=$?
     set -e
     if [ $result -gt 0 ]; then
         log_error "Module '${module_name}' was installed, but installation is invalid"
