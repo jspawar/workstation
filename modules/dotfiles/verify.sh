@@ -10,3 +10,7 @@ test -d "${HOME}/.config/bash"
 # git
 test -f "${HOME}/.gitconfig"
 test "$(git config --get alias.br)" = "branch"
+
+# ruby
+test -f "${HOME}/.ruby-version"
+test "${RUBY_ROOT}" = "${HOME}/.rubies/$(cat "${HOME}/.ruby-version")"
