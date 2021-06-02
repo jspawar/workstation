@@ -1,4 +1,5 @@
 # Taps
+tap 'railwaycat/emacsmacport'
 tap 'romkatv/gitstatus'
 
 # Core utilities
@@ -7,8 +8,7 @@ brew 'bash-completion'
 brew 'bat'
 brew 'coreutils'
 brew 'curl'
-# TODO: comment this back in when you run this on a fresh machine which didn't already have them
-# brew 'docker'
+brew 'docker'
 brew 'fd'
 brew 'git'
 brew 'gnu-sed'
@@ -38,7 +38,10 @@ brew 'railwaycat/emacsmacport/emacs-mac', args: ["with-modules"]
 brew 'freetype'
 
 # Cask stuff
-# TODO: comment these back in when you run this on a fresh machine which didn't already have them
-# cask 'flycut'
-# cask 'iterm2'
-# cask 'rectangle'
+# TODO: pick a terminal emulator
+cask 'alacritty'
+cask 'docker'
+cask 'flycut'
+cask 'iterm2'
+cask 'kitty'
+cask 'rectangle'
