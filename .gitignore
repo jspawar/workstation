@@ -6,3 +6,4 @@ tmp/
 
 # random symlinks for dotfiles
 modules/dotfiles/bash/.config/iterm2/
+modules/dotfiles/bash/.config/tmux/
