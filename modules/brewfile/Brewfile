@@ -39,9 +39,7 @@ brew 'freetype'
 
 # Cask stuff
 # TODO: pick a terminal emulator
-cask 'alacritty'
 cask 'docker'
 cask 'flycut'
 cask 'iterm2'
-cask 'kitty'
 cask 'rectangle'
