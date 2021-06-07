@@ -38,7 +38,6 @@ brew 'railwaycat/emacsmacport/emacs-mac', args: ["with-modules"]
 brew 'freetype'
 
 # Cask stuff
-# TODO: pick a terminal emulator
 cask 'docker'
 cask 'flycut'
 cask 'iterm2'
