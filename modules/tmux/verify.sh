@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eux
 
 # verify tmux is actually installed
 command -v tmux

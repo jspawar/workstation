@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -eux
 
 # verify doom-emacs is cloned and `doom` CLI is available on path
 test -x "${HOME}/.emacs.d/bin/doom"

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eux
 
 # doom-emacs support
 command -v gopls

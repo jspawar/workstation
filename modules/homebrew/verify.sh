@@ -1,4 +1,4 @@
 #!/bin/bash
-set -euo pipefail
+set -eux
 
 command -v brew
