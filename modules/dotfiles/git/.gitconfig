@@ -22,6 +22,9 @@
 [core]
 	pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 
+[credential]
+	helper = osxkeychain
+
 [merge]
 	# Display common-ancestor blocks in conflict hunks
 	conflictStyle = diff3
