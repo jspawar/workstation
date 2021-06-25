@@ -5,5 +5,9 @@
 tmp/
 
 # random symlinks for dotfiles
+# TODO: maybe allow-list instead of deny-list approach here?
 modules/dotfiles/bash/.config/iterm2/
 modules/dotfiles/bash/.config/tmux/
+modules/dotfiles/bash/.config/gh/
+modules/dotfiles/bash/.config/htop/
+modules/dotfiles/bash/.config/GitHub*

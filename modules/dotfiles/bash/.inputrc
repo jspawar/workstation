@@ -3,7 +3,9 @@ set completion-ignore-case on
 
 # up/down to complete based on history
 "\e[A": history-search-backward
+"\eOA": history-search-backward
 "\e[B": history-search-forward
+"\eOB": history-search-forward
 
 # colorize tab-completion results based on filetype
 set colored-stats on
