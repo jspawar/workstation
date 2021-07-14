@@ -11,6 +11,9 @@ echo "Installing Ruby and Ruby utilities..."
 if [ ! -d "${HOME}"/.rubies/ruby-"${latest_ruby2_version}" ]; then
     echo "Installing latest Ruby 2.x..."
     ruby-install ruby "${latest_ruby2_version}"
+
+    # reload bash so that chruby recognizes the newly installed version in this shell
+    source "${HOME}"/.bashrc
 fi
 
 # TODO: install absolute latest version of Ruby
