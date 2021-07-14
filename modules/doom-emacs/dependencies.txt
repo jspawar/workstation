@@ -1,3 +1,4 @@
 brewfile
 dotfiles
 golang
+rust
