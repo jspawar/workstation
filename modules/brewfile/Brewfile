@@ -3,6 +3,8 @@ tap 'railwaycat/emacsmacport'
 tap 'romkatv/gitstatus'
 
 # Core utilities
+# TODO: install other azure CLIs too? put this in repo-specific `script/bootstrap`?
+brew 'azcopy'
 brew 'bash'
 brew 'bash-completion'
 brew 'bat'

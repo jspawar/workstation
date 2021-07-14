@@ -16,10 +16,9 @@ function my_prompt_command() {
     local reset="\[\e[m\]"
 
     local exit_string
-    if [ ${prev_exit} -eq 0 ]; then
-        exit_string="${blue}Exit: ${prev_exit}${reset}"
-    else
-        exit_string="${red}Exit: ${prev_exit}${reset}"
+    # exit code 130 indicates interrupted by `C-c` which I don't want to report as an error
+    if [ ${prev_exit} -ne 0 ] && [ ${prev_exit} -ne 130 ]; then
+        exit_string="❌ ${red}Exit: ${prev_exit}${reset} "
     fi
 
     local _gitstatus
@@ -27,7 +26,7 @@ function my_prompt_command() {
         _gitstatus=" - ${GITSTATUS_PROMPT}"
     fi
 
-    PS1="${green}\D{%r}${reset} ${red}\u${reset} ${blue}\w${reset}${_gitstatus}\n"
-    PS1+="|${exit_string}| → "
+    PS1="${red}\u${reset} ${blue}\w${reset}${_gitstatus}\n"
+    PS1+="🕥 ${green}[\D{%r}]${reset} ${exit_string}→ "
 }
 export PROMPT_COMMAND=my_prompt_command
