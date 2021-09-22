@@ -11,3 +11,4 @@ modules/dotfiles/bash/.config/tmux/
 modules/dotfiles/bash/.config/gh/
 modules/dotfiles/bash/.config/htop/
 modules/dotfiles/bash/.config/GitHub*
+modules/dotfiles/bash/.config/configstore
