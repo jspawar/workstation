@@ -29,4 +29,5 @@ function my_prompt_command() {
     PS1="${red}\u${reset} ${blue}\w${reset}${_gitstatus}\n"
     PS1+="🕥 ${green}[\D{%r}]${reset} ${exit_string}→ "
 }
-export PROMPT_COMMAND=my_prompt_command
+# NOTE: `_direnv_hook` is loaded by `direnv.bash` and relying on that being loaded first
+export PROMPT_COMMAND="_direnv_hook && my_prompt_command"
