@@ -29,5 +29,22 @@ function my_prompt_command() {
     PS1="${red}\u${reset} ${blue}\w${reset}${_gitstatus}\n"
     PS1+="🕥 ${green}[\D{%r}]${reset} ${exit_string}→ "
 }
+function powerline_go_prompt() {
+    local _prev_exit_code="$?"
+    local _powerline_go_path="${HOME}/go/bin/powerline-go"
+
+    if [ -f "${_powerline_go_path}" ]; then
+        PS1="$(${_powerline_go_path} \
+            -cwd-mode "plain" \
+            -hostname-only-if-ssh \
+            -modules "user,host,ssh,cwd,git,jobs,exit,time" \
+            -newline \
+            -error ${_prev_exit_code} \
+            -jobs $(jobs -p | wc -l))"
+    else
+        my_prompt_command
+    fi
+}
 # NOTE: `_direnv_hook` is loaded by `direnv.bash` and relying on that being loaded first
-export PROMPT_COMMAND="_direnv_hook && my_prompt_command"
+# export PROMPT_COMMAND="_direnv_hook && my_prompt_command"
+export PROMPT_COMMAND="powerline_go_prompt && _direnv_hook"

@@ -14,3 +14,6 @@ go get -v golang.org/x/tools/cmd/gorename
 go get -v golang.org/x/tools/cmd/guru
 go get -v github.com/cweill/gotests/...
 go get -v github.com/fatih/gomodifytags
+
+# prompt
+go install -v github.com/justjanne/powerline-go@latest
