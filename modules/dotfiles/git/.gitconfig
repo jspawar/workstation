@@ -31,3 +31,12 @@
 
 [interactive]
 	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	defaultKeyCommand = "ssh-add -L"
+
+[commit]
+	gpgsign = true
