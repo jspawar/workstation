@@ -21,6 +21,7 @@ brew 'k9s'
 # TODO: force this to overwrite link because docker also installs `kubectl`
 brew 'kubernetes-cli'
 brew 'mysql-client@5.7'
+brew 'pandoc'
 brew 'pstree'
 brew 'ripgrep'
 brew 'romkatv/gitstatus/gitstatus'
