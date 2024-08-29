@@ -1,5 +1,5 @@
 # Taps
-tap 'railwaycat/emacsmacport'
+tap 'd12frosted/emacs-plus'
 tap 'romkatv/gitstatus'
 
 # Core utilities
@@ -41,7 +41,7 @@ brew 'ruby-install'
 brew 'shellcheck'
 
 # Editors
-brew 'railwaycat/emacsmacport/emacs-mac', args: ['with-modules']
+brew 'd12frosted/emacs-plus/emacs-plus', args: ['with-native-comp']
 
 # Fonts
 brew 'freetype'
