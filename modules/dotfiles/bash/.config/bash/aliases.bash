@@ -5,7 +5,7 @@ alias pave='${HOME}/workspace/workstation/pave'
 alias vim='emacs -nw'
 
 # ll
-alias ll='ls -la'
+alias ll='ls -la --color=auto'
 
 # git
 alias gs='git status'
