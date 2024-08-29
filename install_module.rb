@@ -4,6 +4,42 @@ require 'set'
 require_relative 'loggers'
 
 # TODO: make a module or something for this file? organize into a directory like `lib/`?
+def verify_module(module_name, verified_modules)
+  if verified_modules.include?(module_name)
+    log_debug "Module '#{module_name}' has already been verified"
+    return
+  end
+
+  module_path = "#{__dir__}/modules/#{module_name}"
+  unless Dir.exist?(module_path)
+    log_error "Module '#{module_name}' does not exist"
+    # TODO: raise exception instead
+    raise StandardError, "Module '#{module_name}' does not exist"
+  end
+
+  # read all dependencies and attempt to verify them as needed
+  IO.foreach("#{module_path}/dependencies.txt") do |dependency|
+    # remove trailing whitespace
+    dependency = dependency.strip
+    log_debug "Verifying dependency '#{dependency}' for module '#{module_name}'"
+    begin
+      verify_module dependency, verified_modules
+    rescue StandardError => e
+      log_error "Failed to verify dependency: #{e.message}"
+      # TODO: what to do here instead of raising?
+      raise e
+    end
+  end
+
+  # verify module to see if it has already been installed
+  verify_exit_status = execute_module_script("#{module_path}/verify.sh", should_log_output: true)
+  if verify_exit_status.zero?
+    log_debug "Module '#{module_name}' is already installed"
+    verified_modules << module_name
+    return
+  end
+end
+
 def install_module(module_name, verified_modules)
   if verified_modules.include?(module_name)
     log_debug "Module '#{module_name}' has already been verified"
