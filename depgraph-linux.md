@@ -1,0 +1,9 @@
+- ruby
+  - apt
+    - dotfiles
+      - rust
+        - doom-emacs
+        - hx
+      - golang
+        - doom-emacs
+        - hx

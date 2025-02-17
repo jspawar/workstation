@@ -1,0 +1,10 @@
+- xcode-command-line-tools
+  - homebrew
+    - brewfile
+      - dotfiles
+        - rust
+          - doom-emacs
+        - ruby
+        - golang
+          - doom-emacs
+      - tmux
