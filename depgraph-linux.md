@@ -1,9 +1,12 @@
 - ruby
   - apt
-    - dotfiles
-      - rust
-        - doom-emacs
-        - hx
-      - golang
-        - doom-emacs
-        - hx
+    - gitstatus
+      - dotfiles
+        - rust
+          - doom-emacs
+          - hx
+        - golang
+          - doom-emacs
+          - hx
+        - dotnet
+          - csharp-ls

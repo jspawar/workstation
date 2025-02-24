@@ -1,37 +1,14 @@
 #!/bin/bash
 set -euxo pipefail
 
-# TODO: install:
-# bat
-# coreutils?
-# direnv
-# docker
-# fd
-# htop
-# jq
-# pstree
-# ripgrep
-# rust-analyzer
-# stow
-# tldr
-# tmux
-# tree
-# watch?
-# z
-sudo apt install -y \
-  bat \
-  direnv \
-  
-
-# TODO: install:
-# shellcheck
-
-# TODO: install:
-# emacs?
-# hx
-
-# install gitstatus for prompt
-git clone --depth=1 https://github.com/romkatv/gitstatus.git ~/gitstatus
-# echo 'source ~/gitstatus/gitstatus.prompt.zsh' >>! ~/.zshrc
-
-# TODO: install freetype font?
+command -v batcat # TODO: ensure that alias to `bat` gets setup
+command -v direnv
+command -v dotnet
+command -v fdfind # TODO: ensure that alias to `fd` gets setup
+command -v htop
+command -v jq
+command -v pstree
+command -v stow
+command -v tmux
+command -v tree
+command -v zoxide # TODO: ensure that alias to `z` gets setup
