@@ -1,33 +1,24 @@
 # Taps
-tap 'd12frosted/emacs-plus'
-tap 'romkatv/gitstatus'
+tap 'hashicorp/tap'
 
 # Core utilities
-# TODO: install other azure CLIs too? put this in repo-specific `script/bootstrap`?
-brew 'azcopy'
 brew 'bash'
 brew 'bash-completion'
 brew 'bat'
 brew 'coreutils'
 brew 'curl'
 brew 'direnv'
-brew 'docker'
+brew 'docker-compose'
 brew 'fd'
 brew 'git'
 brew 'gnu-sed'
-brew 'htop'
 brew 'jq'
-brew 'k9s'
-# TODO: force this to overwrite link because docker also installs `kubectl`
-brew 'kubernetes-cli'
-brew 'mysql-client@5.7'
-brew 'pandoc'
+brew 'mysql-client@8.4'
+brew 'podman'
 brew 'pstree'
 brew 'ripgrep'
-brew 'romkatv/gitstatus/gitstatus'
-brew 'rust-analyzer'
 brew 'stow'
-brew 'terraform'
+brew 'hashicorp/tap/terraform'
 brew 'tldr'
 brew 'tmux'
 brew 'tree'
@@ -35,19 +26,16 @@ brew 'watch'
 brew 'z'
 
 # Languages
-brew 'chruby'
 brew 'go'
-brew 'ruby-install'
 brew 'shellcheck'
 
 # Editors
-brew 'd12frosted/emacs-plus/emacs-plus', args: ['with-native-comp']
+brew 'helix', args: ['HEAD']
 
 # Fonts
 brew 'freetype'
 
 # Cask stuff
-cask 'docker'
-cask 'flycut'
 cask 'iterm2'
+cask 'raycast'
 cask 'rectangle'

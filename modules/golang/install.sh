@@ -4,16 +4,11 @@ set -eu
 echo "Installing golang utilities..."
 
 set -x
-# doom-emacs support
-go get -v golang.org/x/tools/gopls@latest
-go get -v github.com/motemen/gore/cmd/gore
-go get -v github.com/stamblerre/gocode
-go get -v golang.org/x/tools/cmd/godoc
-go get -v golang.org/x/tools/cmd/goimports
-go get -v golang.org/x/tools/cmd/gorename
-go get -v golang.org/x/tools/cmd/guru
-go get -v github.com/cweill/gotests/...
-go get -v github.com/fatih/gomodifytags
+go install -v golang.org/x/tools/gopls@latest                               # LSP
+go install -v github.com/go-delve/delve/cmd/dlv@latest                      # Debugger
+go install -v golang.org/x/tools/cmd/goimports@latest                       # Formatter
+go install -v github.com/nametake/golangci-lint-langserver@latest           # Linter
+go install -v github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest # Linter cli
 
 # prompt
 go install -v github.com/justjanne/powerline-go@latest

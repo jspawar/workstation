@@ -1,13 +1,11 @@
 #!/bin/bash
 set -eux
 
-# doom-emacs support
+# TODO: need to source latest shell on fresh installs
+
+# Editor support
 command -v gopls
-command -v gocode
-command -v godoc
-command -v gorename
-command -v gore
-command -v guru
+command -v dlv
 command -v goimports
-command -v gotests
-command -v gomodifytags
+command -v golangci-lint-langserver
+command -v golangci-lint

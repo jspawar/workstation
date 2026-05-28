@@ -1,0 +1,5 @@
+[[language]]
+name = "go"
+auto-format = true
+# TODO: use `goimports` instead as Helix documentation suggests?
+formatter = { command = "gofmt", args = ["-s"] }

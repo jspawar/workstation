@@ -1,13 +1,14 @@
 #!/bin/bash
 set -eu
 
-echo "Installing Luan's tmux config..."
+echo "Installing tmux plugins..."
 
-set +e
-  test -f "${HOME}/.tmux.conf" && mv -f "${HOME}/.tmux.conf" "${HOME}/.tmux.conf.bak"
-  test -d "${HOME}/.tmux" && rm -rf "${HOME}/.tmux.bak" && mv "${HOME}/.tmux" "${HOME}/.tmux.bak"
-  test -d "${HOME}/.config/tmux" && rm -rf "${HOME}/.config/tmux.bak" && mv -f "${HOME}/.config/tmux" "${HOME}/.config/tmux.bak"
-set -e
+mkdir -p "${HOME}/.tmux/plugins"
 
-git clone https://github.com/luan/tmuxfiles.git "${HOME}/.config/tmux"
-"${HOME}/.config/tmux/install"
+if [[ ! -d ~/.tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+"${HOME}"/.tmux/plugins/tpm/bin/install_plugins
+"${HOME}"/.tmux/plugins/tpm/bin/update_plugins all
+"${HOME}"/.tmux/plugins/tpm/bin/clean_plugins

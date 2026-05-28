@@ -5,8 +5,8 @@ set -eux
 command -v tmux
 
 # verify config exists on filesystem
-test -d "${HOME}/.config/tmux"
+test -f "${HOME}/.tmux.conf"
 test -d "${HOME}/.tmux/plugins/tpm"
 
 # verify plugins have been installed (using random one as a canary)
-test -d "${HOME}/.config/tmux/plugins/tmux-yank"
+test -d "${HOME}/.tmux/plugins/tmux-yank"

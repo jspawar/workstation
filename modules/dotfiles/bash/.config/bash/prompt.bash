@@ -1,14 +1,7 @@
-source "$(brew --prefix)/opt/gitstatus/gitstatus.prompt.sh"
-
-# NOTE: not entirely sure why, but need to use single quotes to interpolate `GITSTATUS_PROMPT`
-# NOTE: PS1 must be set to whatever I like wherever the above file is sourced (that file tries to set PS1 too)
-# TODO: only render git prompt stuff for git repos
 # TODO: render exit status of previous command
 # TODO: render time to run previous command
 function my_prompt_command() {
     local prev_exit="$?"
-
-    gitstatus_prompt_update
 
     local green="\[\e[92m\]"
     local red="\[\e[91m\]"
@@ -29,6 +22,7 @@ function my_prompt_command() {
     PS1="${red}\u${reset} ${blue}\w${reset}${_gitstatus}\n"
     PS1+="🕥 ${green}[\D{%r}]${reset} ${exit_string}→ "
 }
+
 function powerline_go_prompt() {
     local _prev_exit_code="$?"
     local _powerline_go_path="${HOME}/go/bin/powerline-go"
@@ -45,6 +39,6 @@ function powerline_go_prompt() {
         my_prompt_command
     fi
 }
+
 # NOTE: `_direnv_hook` is loaded by `direnv.bash` and relying on that being loaded first
-# export PROMPT_COMMAND="_direnv_hook && my_prompt_command"
 export PROMPT_COMMAND="powerline_go_prompt && _direnv_hook"
